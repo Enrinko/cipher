@@ -14,12 +14,17 @@ public class testing {
         System.out.println("3. Зашифровать шифром Виженера");
         System.out.println("4. Расшифровать шифром Виженера");
         System.out.println("5. Завершить работу");
+        System.out.print(">");
         act = scan.nextInt();
+        String message = "";
         System.out.println("Введите строку");
-        String message = scan.next();
-        System.out.println("Введите ключ");
+        while (message.isEmpty()) {
+            System.out.print(">");
+            message = scan.nextLine();
+        }
         switch (act) {
             case 1 -> {
+                System.out.println("Введите ключ");
                 int key = scan.nextInt();
                 Ceasar ceasar = new Ceasar(key, message);
                 System.out.println("Зашифровано шифром Цезаря:");
@@ -27,6 +32,7 @@ public class testing {
                 recurs(0);
             }
             case 2 -> {
+                System.out.println("Введите ключ");
                 int key = scan.nextInt();
                 Ceasar ceasar = new Ceasar(-key, message);
                 System.out.println("Расшифровано шифром Цезаря:");
@@ -34,14 +40,16 @@ public class testing {
                 recurs(0);
             }
             case 3 -> {
-                String key = scan.next();
+                System.out.println("Введите ключ");
+                String key = scan.nextLine();
                 Vijener vijener = new Vijener(key, message, true);
                 System.out.println("Зашифровано шифром Виженера:");
                 System.out.println(vijener.cipherOrDecipher());
                 recurs(0);
             }
             case 4 -> {
-                String key = scan.next();
+                System.out.println("Введите ключ");
+                String key = scan.nextLine();
                 Vijener vijener = new Vijener(key, message, false);
                 System.out.println("Расшифровано шифром Виженера:");
                 System.out.println(vijener.cipherOrDecipher());

@@ -37,7 +37,7 @@ public class Vijener {
                     newMessage += (char) redo(smallA, smallYa, newChar, keyChar);
                 }
                 default -> {
-                    newMessage += keyChar;
+                    newMessage += newChar;
                 }
             }
         }
